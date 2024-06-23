@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|c:\\users\\isabe\\onedrive\\documentos\\23dv\\programacion_visual\\krustaseok\\krustaseok\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|c:\\users\\isabe\\onedrive\\documentos\\23dv\\programacion_visual\\krustaseok\\krustaseok\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +18,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\isabe\\OneDrive\\Documentos\\23DV\\programacion_visual\\KrustaseoK\\KrustaseoK\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\isabe\\OneDrive\\Documentos\\23DV\\programacion_visual\\KrustaseoK\\KrustaseoK\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AQIAAGAAAAAAAAAAAADwv3QAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T14:24:06.947Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
