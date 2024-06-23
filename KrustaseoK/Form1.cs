@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,11 +7,63 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GMap.NET;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
 
 namespace KrustaseoK
 {
     public partial class Form1 : Form
     {
+        GMarkerGoogle marker;
+        GMapOverlay markerOverlay;
+        GMapOverlay routeOverlay;
+        double Latinicial = 21.1977162234265;
+        double Loninicial = -86.8570518493652;
+        private bool soloUnaRuta = false;
+
+        void sucursal()
+        {
+
+            gMapControl1.DragButton = MouseButtons.Left;
+            gMapControl1.CanDragMap = true;
+            gMapControl1.MapProvider = GMapProviders.GoogleMap;
+            gMapControl1.Position = new PointLatLng(Latinicial, Loninicial);
+            gMapControl1.MinZoom = 1;
+            gMapControl1.MaxZoom = 24;
+            gMapControl1.Zoom = 15;
+            gMapControl1.AutoScroll = true;
+
+            markerOverlay = new GMapOverlay("Sucursal");
+            marker = new GMarkerGoogle(new PointLatLng(Latinicial, Loninicial), GMarkerGoogleType.green);
+            markerOverlay.Markers.Add(marker);
+            marker.ToolTipMode = MarkerTooltipMode.Always;
+            marker.ToolTipText = string.Format("Sucursal \n Latitud:{0} \n Longitud {1}", Latinicial, Loninicial);
+            gMapControl1.Overlays.Add(markerOverlay);
+
+            
+            routeOverlay = new GMapOverlay("routes");
+            gMapControl1.Overlays.Add(routeOverlay);
+
+        }
+        private void dibugarRuta(PointLatLng start, PointLatLng end)
+        {
+            
+            routeOverlay.Routes.Clear();
+            routeOverlay.Markers.Clear();
+            GMarkerGoogle startMarker = new GMarkerGoogle(start, GMarkerGoogleType.green);
+            GMarkerGoogle endMarker = new GMarkerGoogle(end, GMarkerGoogleType.red);
+            routeOverlay.Markers.Add(startMarker);
+            routeOverlay.Markers.Add(endMarker);
+            var points = new List<PointLatLng> { start, end };
+            GMapRoute route = new GMapRoute(points, "MyRoute")
+            {
+                Stroke = new Pen(Color.Red, 3)
+            };
+            routeOverlay.Routes.Add(route);
+            gMapControl1.ZoomAndCenterMarkers("routes");
+        }
         public Form1()
         {
             InitializeComponent();
@@ -34,7 +86,7 @@ namespace KrustaseoK
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -52,8 +104,12 @@ namespace KrustaseoK
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private async void button4_Click(object sender, EventArgs e)
         {
+            //dddd
+            await Task.Delay(2000);
+            tabPage2.Parent = null;
+            tabControl1.SelectedTab = tabPage1;
 
         }
 
@@ -104,7 +160,10 @@ namespace KrustaseoK
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            sucursal();
+            tabPage2.Parent = null;
+            tabPage3.Parent = null;
+            
         }
 
         private void label63_Click(object sender, EventArgs e)
@@ -115,6 +174,52 @@ namespace KrustaseoK
         private void textBox12_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void gMapControl1_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gMapControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void gMapControl1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (soloUnaRuta) return;
+            double lat = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lat;
+            double lon = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lng;
+            marker.Position = new PointLatLng(lat, lon);
+            marker.ToolTipText = string.Format("Casa \n Latitud:{0} \n Longitud {1}", lat, lon);
+            listBox1.Items.Add(lat);
+            listBox2.Items.Add(lon);
+            if (listBox1.Items.Count >= 1 && listBox2.Items.Count >= 1)
+            {
+                double startLat = Latinicial;
+                double startLon = Loninicial;
+                double endLat = lat;
+                double endLon = lon;
+                dibugarRuta(new PointLatLng(startLat, startLon), new PointLatLng(endLat, endLon));
+                soloUnaRuta = true;
+            }
+            await Task.Delay(3000);
+            tabControl1.SelectedTab = tabPage2;
+            tabPage3.Parent = null;
+            
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Insert(3, tabPage3);
+            tabControl1.SelectedTab = tabPage3;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Insert(2, tabPage2);
+            tabControl1.SelectedTab = tabPage2;
         }
     }
 }
