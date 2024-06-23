@@ -11,3 +11,16 @@ C:\Users\isabe\OneDrive\Documentos\23DV\programacion_visual\KrustaseoK\Krustaseo
 C:\Users\isabe\OneDrive\Documentos\23DV\programacion_visual\KrustaseoK\KrustaseoK\bin\Debug\GMap.NET.Core.dll
 C:\Users\isabe\OneDrive\Documentos\23DV\programacion_visual\KrustaseoK\KrustaseoK\bin\Debug\GMap.NET.WindowsForms.dll
 C:\Users\isabe\OneDrive\Documentos\23DV\programacion_visual\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.csproj.Up2Date
+C:\Users\RICARDO\Desktop\KrustaseoK\KrustaseoK\bin\Debug\KrustaseoK.exe.config
+C:\Users\RICARDO\Desktop\KrustaseoK\KrustaseoK\bin\Debug\KrustaseoK.exe
+C:\Users\RICARDO\Desktop\KrustaseoK\KrustaseoK\bin\Debug\KrustaseoK.pdb
+C:\Users\RICARDO\Desktop\KrustaseoK\KrustaseoK\bin\Debug\GMap.NET.Core.dll
+C:\Users\RICARDO\Desktop\KrustaseoK\KrustaseoK\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\RICARDO\Desktop\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.csproj.AssemblyReference.cache
+C:\Users\RICARDO\Desktop\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.Form1.resources
+C:\Users\RICARDO\Desktop\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.Properties.Resources.resources
+C:\Users\RICARDO\Desktop\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.csproj.GenerateResource.cache
+C:\Users\RICARDO\Desktop\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.csproj.CoreCompileInputs.cache
+C:\Users\RICARDO\Desktop\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.csproj.Up2Date
+C:\Users\RICARDO\Desktop\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.exe
+C:\Users\RICARDO\Desktop\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.pdb

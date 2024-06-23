@@ -11,6 +11,7 @@ using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace KrustaseoK
 {
@@ -220,6 +221,128 @@ namespace KrustaseoK
         {
             tabControl1.TabPages.Insert(2, tabPage2);
             tabControl1.SelectedTab = tabPage2;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 2;
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 4;
+            listBox5.Items.Add("Hamburguesa de res ");
+            listBox6.Items.Add("$ 135.00 ");
+            if (string.IsNullOrWhiteSpace(textBox1.Text)) {
+
+                string texto = textBox2.Text;
+                listBox9.Items.Add(texto);
+            }
+            else
+            {
+                string texto = textBox8.Text;
+                listBox9.Items.Add(texto);
+            }
+            listBox8.Items.Add(Latinicial);
+            listBox7.Items.Add(Loninicial);
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 5;
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 3;
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+            tabControl1.SelectedIndex = 4;
+            listBox5.Items.Add("Hamburguesa de pollo ");
+            listBox6.Items.Add("$ 120.00 ");
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+
+                string texto = textBox2.Text;
+                listBox9.Items.Add(texto);
+            }
+            else
+            {
+                string texto = textBox8.Text;
+                listBox9.Items.Add(texto);
+            }
+            listBox8.Items.Add(Latinicial);
+            listBox7.Items.Add(Loninicial);
+
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 4;
+            listBox5.Items.Add("Hamburguesa de cordero ");
+            listBox6.Items.Add("$ 155.00 ");
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+
+                string texto = textBox2.Text;
+                listBox9.Items.Add(texto);
+            }
+            else
+            {
+                string texto = textBox8.Text;
+                listBox9.Items.Add(texto);
+            }
+            listBox8.Items.Add(Latinicial);
+            listBox7.Items.Add(Loninicial);
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 4;
+            listBox5.Items.Add("Hamburguesa de pescado ");
+            listBox6.Items.Add("$ 115.00 ");
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+
+                string texto = textBox2.Text;
+                listBox9.Items.Add(texto);
+            }
+            else
+            {
+                string texto = textBox8.Text;
+                listBox9.Items.Add(texto);
+            }
+            listBox8.Items.Add(Latinicial);
+            listBox7.Items.Add(Loninicial);
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 4;
+            listBox5.Items.Add("Carne extra");
+            listBox6.Items.Add("$ 35.00 ");
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+
+                string texto = textBox2.Text;
+                listBox9.Items.Add(texto);
+            }
+            else
+            {
+                string texto = textBox8.Text;
+                listBox9.Items.Add(texto);
+            }
+            listBox8.Items.Add(Latinicial);
+            listBox7.Items.Add(Loninicial);
         }
     }
 }
