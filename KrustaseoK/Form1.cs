@@ -2,9 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
+using System.Xml;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GMap.NET;
@@ -221,5 +224,32 @@ namespace KrustaseoK
             tabControl1.TabPages.Insert(2, tabPage2);
             tabControl1.SelectedTab = tabPage2;
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            consulta consultas = new consulta();
+
+            consultas.Historial(textBox11.Text, textBox5.Text, textBox6.Text);
+
+            MySqlDataReader ver;
+            ver = consultas.leer();
+            listBox4.Rows.Clear();
+            listBox4.Refresh();
+
+            if (ver.HasRows)
+            {
+                while (ver.Read())
+                {
+                    int n = listBox4.Rows.Add();
+
+                    listBox4.Rows[n].Cells[0].Value = ver.GetValue(0);
+                    listBox4.Rows[n].Cells[1].Value = ver.GetString(1);
+                    listBox4.Rows[n].Cells[2].Value = ver.GetString(2);
+                    listBox4.Rows[n].Cells[3].Value = ver.GetString(3);
+                }
+            }
+            consultas.cerrar();
+        }
+    }
     }
 }
