@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\pedro\\Documents\\Pedro\\Universidad\\Cuatrimestre 3\\Programacion Visual\\KrustaseoK\\KrustaseoK\\KrustaseoK\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|C:\\Users\\pedro\\Documents\\Pedro\\Universidad\\Cuatrimestre 3\\Programacion Visual\\KrustaseoK\\KrustaseoK\\KrustaseoK\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|c:\\users\\pedro\\documents\\pedro\\universidad\\cuatrimestre 3\\programacion visual\\krustaseok\\krustaseok\\krustaseok\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|C:\\Users\\pedro\\Documents\\Pedro\\Universidad\\Cuatrimestre 3\\Programacion Visual\\KrustaseoK\\KrustaseoK\\KrustaseoK\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|C:\\Users\\pedro\\Documents\\Pedro\\Universidad\\Cuatrimestre 3\\Programacion Visual\\KrustaseoK\\KrustaseoK\\KrustaseoK\\consulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|solutionrelative:consulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|c:\\users\\pedro\\documents\\pedro\\universidad\\cuatrimestre 3\\programacion visual\\krustaseok\\krustaseok\\krustaseok\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,20 +30,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "consulta.cs",
               "DocumentMoniker": "C:\\Users\\pedro\\Documents\\Pedro\\Universidad\\Cuatrimestre 3\\Programacion Visual\\KrustaseoK\\KrustaseoK\\KrustaseoK\\consulta.cs",
               "RelativeDocumentMoniker": "consulta.cs",
               "ToolTip": "C:\\Users\\pedro\\Documents\\Pedro\\Universidad\\Cuatrimestre 3\\Programacion Visual\\KrustaseoK\\KrustaseoK\\KrustaseoK\\consulta.cs",
               "RelativeToolTip": "consulta.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD0AAACHAAAA",
+              "ViewState": "AQIAACMAAAAAAAAAAAAgwCoAAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-23T23:55:31.607Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Form1.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\pedro\\Documents\\Pedro\\Universidad\\Cuatrimestre 3\\Programacion Visual\\KrustaseoK\\KrustaseoK\\KrustaseoK\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -61,7 +61,7 @@
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\pedro\\Documents\\Pedro\\Universidad\\Cuatrimestre 3\\Programacion Visual\\KrustaseoK\\KrustaseoK\\KrustaseoK\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHAAAABLAAAA",
+              "ViewState": "AQIAAH0AAAAAAAAAAAAqwIYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-22T14:24:06.947Z",
               "EditorCaption": ""

@@ -112,10 +112,11 @@ namespace KrustaseoK
             MySqlDataReader ver;
             ver = consulta.filtroInicioSesion(textBox1.Text,textBox2.Text);
 
+
             if (ver.HasRows)
             {
-                while (ver.Read())
-                {
+                ver.Read();
+                
                     string usuarioColumna = "Usuario";
                     int indiceUsuarioColumna = ver.GetOrdinal(usuarioColumna);
                     string usuario = ver.GetString(indiceUsuarioColumna);
@@ -124,27 +125,29 @@ namespace KrustaseoK
                     int indiceContraseñaColumna = ver.GetOrdinal(contraseñaColumna);
                     string contraseña = ver.GetString(indiceContraseñaColumna);
 
-                    if (textBox1.Text == usuario || textBox2.Text== contraseña)
+                    if (textBox1.Text == usuario || textBox2.Text == contraseña)
                     {
-                        
-                            MessageBox.Show("Se a Iniciado Sesion Correctamente");
-                            textBox1.Clear();
-                            textBox2.Clear();
 
-                            tabControl1.TabPages.Insert(1, tabPage4);
-                            tabControl1.TabPages.Insert(1, tabPage5);
-                            tabPage1.Parent = null;
-                                              
-                    } else
+                        MessageBox.Show("Se a Iniciado Sesion Correctamente");
+                        textBox1.Clear();
+                        textBox2.Clear();
+
+                        tabControl1.TabPages.Insert(1, tabPage5);
+                        tabPage1.Parent = null;
+
+                    }
+                   else  
                     {
                         MessageBox.Show("Inicio de Sesion Incorrecto");
+
                         textBox1.Clear();
                         textBox2.Clear();
                         textBox1.Focus();
                         return;
                     }
-                   
-                }
+
+                
+
             }
             consulta.cerrar();
         }
@@ -162,14 +165,38 @@ namespace KrustaseoK
         private async void button4_Click(object sender, EventArgs e)
         {
             //dddd
-            await Task.Delay(2000);
+            /*await Task.Delay(2000);
             tabPage2.Parent = null;
-            tabControl1.SelectedTab = tabPage1;
+            tabControl1.SelectedTab = tabPage1;*/
+            /*
+            string nombre = textBox3.Text;
+            string apellido = textBox4.Text;
+            string usuario = textBox8.Text;
+            string numerocelular = textBox5.Text;
+            string correo =textBox9.Text;
+            string direccionparte1 = listBox1.SelectedItem.ToString();
+            string direccionparte2 = listBox2.SelectedItem.ToString();
+            string contraseña = textBox6.Text;*/
+            
+
 
             consulta consulta = new consulta();
             consulta.agregarRegistro(textBox3.Text, textBox4.Text, textBox8.Text, textBox5.Text, textBox9.Text, listBox1.Text, listBox2.Text, textBox6.Text);
             MessageBox.Show("Registro Exitoso");
+            if (tabPage1.Parent == null)
+            {
+                tabControl1.TabPages.Insert(1,tabPage1 );
+            }
+            foreach (TabPage tabpage in tabControl1.TabPages)
+            {
+                if( tabpage != tabPage1)
+                {
+                    tabpage.Parent = null;
+                }
+            }
+
             consulta.cerrar();
+
         }
 
         private void tabPage4_Click(object sender, EventArgs e)
