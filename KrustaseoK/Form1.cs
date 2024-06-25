@@ -28,6 +28,7 @@ namespace KrustaseoK
         string orden = null;
         string direccion = null;
         string segundaDireccion = null;
+        public bool reiniciar = false;
 
 
         void sucursal()
@@ -196,9 +197,8 @@ namespace KrustaseoK
 
 
             consulta consulta = new consulta();
-            string dir1 = listBox1.Text;
-            string dir2 = listBox2.Text;
-            consulta.agregarRegistro(textBox3.Text, textBox4.Text, textBox8.Text, textBox5.Text, textBox9.Text, dir1, dir2, textBox6.Text);
+            
+            consulta.agregarRegistro(textBox3.Text, textBox4.Text, textBox8.Text, textBox5.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox6.Text);
             MessageBox.Show("Registro Exitoso");
             if (tabPage1.Parent == null)
             {
@@ -296,17 +296,16 @@ namespace KrustaseoK
             double lon = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lng;
             marker.Position = new PointLatLng(lat, lon);
             marker.ToolTipText = string.Format("Casa \n Latitud:{0} \n Longitud {1}", lat, lon);
-            listBox1.Items.Add(lat);
-            listBox2.Items.Add(lon);
-            if (listBox1.Items.Count >= 1 && listBox2.Items.Count >= 1)
-            {
+            textBox10.Text = lat.ToString();  
+            textBox11.Text = lon.ToString();
+            
                 double startLat = Latinicial;
                 double startLon = Loninicial;
                 double endLat = lat;
                 double endLon = lon;
                 dibugarRuta(new PointLatLng(startLat, startLon), new PointLatLng(endLat, endLon));
                 soloUnaRuta = true;
-            }
+            
             await Task.Delay(3000);
             tabControl1.SelectedTab = tabPage2;
             tabPage3.Parent = null;
@@ -339,7 +338,7 @@ namespace KrustaseoK
         {
             consulta consulta = new consulta();
             consulta.agregarPago(textBox18.Text,textBox17.Text,comboBox1.Text);
-            listBox10.Items.Add(comboBox1.Text);
+            textBox20.Text = comboBox1.Text;
 
             
 
@@ -357,6 +356,8 @@ namespace KrustaseoK
             tabControl1.TabPages.Insert(1,tabPage4);
             tabControl1.TabPages.Insert(1, tabPage5);
             tabPage9.Parent = null;
+            comboBox1.Items.Clear();
+            comboBox1.Items.Add("Efectivo");
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -368,19 +369,10 @@ namespace KrustaseoK
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+            
             if (comboBox1.Text!= null)
             {
-                if (comboBox1.Text == "Tarjeta de Debito" || comboBox1.Text == "Tarjeta de Credito")
-                {
-                    label60.Parent = this;
-                    label57.Parent = this;
-                    label55.Parent = this;
-                    label59.Parent = this;
-                    textBox16.Parent = this;
-                    textBox12.Parent = this;
-                    textBox13.Parent = this;
-                    textBox15.Parent = this;
-                } else
+                if (comboBox1.Text == "Efectivo")
                 {
                     label60.Parent = null;
                     label57.Parent = null;
@@ -390,6 +382,21 @@ namespace KrustaseoK
                     textBox12.Parent = null;
                     textBox13.Parent = null;
                     textBox15.Parent = null;
+                    if (reiniciar == true)
+                    {
+                        return;
+                    }
+                } else 
+                {
+
+                    label60.Parent = this;
+                    label57.Parent = this;
+                    label55.Parent = this;
+                    label59.Parent = this;
+                    textBox16.Parent = this;
+                    textBox12.Parent = this;
+                    textBox13.Parent = this;
+                    textBox15.Parent = this;
                 }
 
             } 
@@ -417,7 +424,7 @@ namespace KrustaseoK
            //consulta.tablapedido ( listBox5.Items.Add(texto)  );
 
 
-            consulta.tablapedido(listBox5.Text,listBox6.Text,listBox10.Text,listBox9.Text,listBox8.Text,listBox7.Text);
+            consulta.tablapedido(textBox14.Text,textBox19.Text,textBox20.Text,listBox9.Text,listBox8.Text,listBox7.Text);
             consulta.cerrar();
 
         }
@@ -458,9 +465,15 @@ namespace KrustaseoK
 
         private void label24_Click(object sender, EventArgs e)
         {
-           pedido = label24.Text;
-            total =  label34.Text;
-            
+            tabControl1.TabPages.Insert(1, tabPage6);
+            tabPage5.Parent = null;
+            textBox14.Text ="Hamburguesa de res ";
+            textBox19.Text = "$ 135.00 ";
+            string texto = textBox8.Text;
+            listBox9.Items.Add(texto);
+            listBox8.Items.Add(Latinicial);
+            listBox7.Items.Add(Loninicial);
+
 
         }
 
@@ -470,8 +483,8 @@ namespace KrustaseoK
 
             tabControl1.TabPages.Insert(1, tabPage6);
             tabPage5.Parent = null;
-            listBox5.Items.Add("Hamburguesa de pollo ");
-            listBox6.Items.Add("$ 120.00 ");
+            textBox14.Text="Hamburguesa de pollo ";
+            textBox19.Text = "$ 120.00 ";
             string texto = textBox8.Text;
             listBox9.Items.Add(texto);
             listBox8.Items.Add(Latinicial);
@@ -482,8 +495,8 @@ namespace KrustaseoK
         {
             tabControl1.TabPages.Insert(1, tabPage6);
             tabPage5.Parent = null;
-            listBox5.Items.Add("Hamburguesa de cordero ");
-            listBox6.Items.Add("$ 155.00 ");
+            textBox14.Text="Hamburguesa de cordero ";
+            textBox19.Text = "$ 155.00 ";
             string texto = textBox8.Text;
             listBox9.Items.Add(texto);
             listBox8.Items.Add(Latinicial);
@@ -494,8 +507,8 @@ namespace KrustaseoK
         {
             tabControl1.TabPages.Insert(1, tabPage6);
             tabPage5.Parent = null;
-            listBox5.Items.Add("Hamburguesa de pescado ");
-            listBox6.Items.Add("$ 115.00 ");
+            textBox14.Text = "Hamburguesa de pescado ";
+            textBox19.Text = "$ 115.00 ";
             string texto = textBox8.Text;
             listBox9.Items.Add(texto);
             listBox8.Items.Add(Latinicial);
@@ -506,8 +519,8 @@ namespace KrustaseoK
         {
             tabControl1.TabPages.Insert(1, tabPage6);
             tabPage5.Parent = null;
-            listBox5.Items.Add("Carne extra");
-            listBox6.Items.Add("$ 35.00 ");
+            textBox14.Text = "Carne extra";
+            textBox19.Text = "$ 35.00 ";
             string texto = textBox8.Text;
             listBox9.Items.Add(texto);
             listBox8.Items.Add(Latinicial);
@@ -601,17 +614,16 @@ namespace KrustaseoK
             double lon = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lng;
             marker.Position = new PointLatLng(lat, lon);
             marker.ToolTipText = string.Format("Casa \n Latitud:{0} \n Longitud {1}", lat, lon);
-            listBox1.Items.Add(lat);
-            listBox2.Items.Add(lon);
-            if (listBox1.Items.Count >= 1 && listBox2.Items.Count >= 1)
-            {
+            textBox10.Text = lat.ToString();
+            textBox11.Text = lon.ToString();
+           
                 double startLat = Latinicial;
                 double startLon = Loninicial;
                 double endLat = lat;
                 double endLon = lon;
                 dibugarRuta(new PointLatLng(startLat, startLon), new PointLatLng(endLat, endLon));
                 soloUnaRuta = true;
-            }
+            
             await Task.Delay(3000);
             tabControl1.SelectedTab = tabPage2;
             tabPage3.Parent = null;
@@ -621,6 +633,29 @@ namespace KrustaseoK
         {
             tabControl1.TabPages.Insert(1, tabPage3);
             tabControl1.SelectedTab = tabPage3;
+        }
+
+        private void listBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox19_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+
+            reiniciar = true;
+            
+
         }
     }
 }

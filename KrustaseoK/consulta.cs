@@ -45,6 +45,7 @@ namespace KrustaseoK
             conex.Open();
             MySqlCommand commando = new MySqlCommand( consulta,conex);
             return commando.ExecuteReader();
+            
         }
 
         public void agregarPago( string nombre, string apellido, string metodoPago)
