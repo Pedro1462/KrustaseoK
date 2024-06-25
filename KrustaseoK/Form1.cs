@@ -24,6 +24,7 @@ namespace KrustaseoK
         double Loninicial = -86.8570518493652;
         private bool soloUnaRuta = false;
 
+
         void sucursal()
         {
 
@@ -110,46 +111,54 @@ namespace KrustaseoK
         {
             consulta consulta = new consulta();
             MySqlDataReader ver;
-            ver = consulta.filtroInicioSesion(textBox1.Text,textBox2.Text);
-
+            ver = consulta.filtroInicioSesion(textBox1.Text, textBox2.Text);
 
             if (ver.HasRows)
             {
                 ver.Read();
-                
-                    string usuarioColumna = "Usuario";
-                    int indiceUsuarioColumna = ver.GetOrdinal(usuarioColumna);
-                    string usuario = ver.GetString(indiceUsuarioColumna);
 
-                    string contraseñaColumna = "Contraseña";
-                    int indiceContraseñaColumna = ver.GetOrdinal(contraseñaColumna);
-                    string contraseña = ver.GetString(indiceContraseñaColumna);
+                string usuarioColumna = "Usuario";
+                int indiceUsuarioColumna = ver.GetOrdinal(usuarioColumna);
+                string usuario = ver.GetString(indiceUsuarioColumna);
 
-                    if (textBox1.Text == usuario || textBox2.Text == contraseña)
-                    {
+                string contraseñaColumna = "Contraseña";
+                int indiceContraseñaColumna = ver.GetOrdinal(contraseñaColumna);
+                string contraseña = ver.GetString(indiceContraseñaColumna);
 
-                        MessageBox.Show("Se a Iniciado Sesion Correctamente");
-                        textBox1.Clear();
-                        textBox2.Clear();
+                if (textBox1.Text == usuario && textBox2.Text == contraseña)
+                {
+                    string texto = textBox1.Text;
+                    listBox9.Items.Add(textBox1.Text);
+                    MessageBox.Show("Se ha iniciado sesión correctamente");
+                    textBox1.Clear();
+                    textBox2.Clear();
 
-                        tabControl1.TabPages.Insert(1, tabPage5);
-                        tabPage1.Parent = null;
 
-                    }
-                   else  
-                    {
-                        MessageBox.Show("Inicio de Sesion Incorrecto");
+                    tabControl1.TabPages.Insert(1, tabPage5);
+                    tabPage1.Parent = null;
+                    
 
-                        textBox1.Clear();
-                        textBox2.Clear();
-                        textBox1.Focus();
-                        return;
-                    }
-
-                
-
+                }
+                else
+                {
+                    MessageBox.Show("Inicio de sesión incorrecto");
+                    textBox1.Clear();
+                    textBox2.Clear();
+                    textBox1.Focus();
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Inicio de sesión incorrecto");
+                textBox1.Clear();
+                textBox2.Clear();
+                textBox1.Focus();
             }
             consulta.cerrar();
+
+            
+
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -322,9 +331,15 @@ namespace KrustaseoK
         {
             consulta consulta = new consulta();
             consulta.agregarPago(textBox18.Text,textBox17.Text,comboBox1.Text);
-            MessageBox.Show("Pago Exitoso");
+
+            
+
+            
+
             tabControl1.TabPages.Insert(1, tabPage6);
-            tabPage9.Parent=null;
+                tabPage9.Parent = null;
+            
+            MessageBox.Show("Pago Exitoso");
             consulta.cerrar();
         }
 
@@ -337,18 +352,16 @@ namespace KrustaseoK
 
         private void button10_Click(object sender, EventArgs e)
         {
-            tabControl1.TabPages.Insert(1,tabPage9);
-            tabPage4.Parent = null;
-            tabPage5.Parent = null;
+            tabControl1.TabPages.Insert(1, tabPage9);
+            tabControl1.SelectedTab = tabPage9;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string metPago = "";
-            if (comboBox1.SelectedItem!= null)
+            
+            if (comboBox1.Text!= null)
             {
-                metPago += comboBox1.SelectedItem.ToString();
-                if (metPago!= "Tarjeta de Credito")
+                if (comboBox1.Text == "Tarjeta de Debito" || comboBox1.Text == "Tarjeta de Credito")
                 {
                     label60.Parent = this;
                     label57.Parent = this;
@@ -358,8 +371,7 @@ namespace KrustaseoK
                     textBox12.Parent = this;
                     textBox13.Parent = this;
                     textBox15.Parent = this;
-                }
-                else
+                } else
                 {
                     label60.Parent = null;
                     label57.Parent = null;
@@ -387,10 +399,182 @@ namespace KrustaseoK
 
         private void button13_Click(object sender, EventArgs e)
         {
+            tabControl1.TabPages.Insert(1, tabPage7);
+            tabPage6.Parent = null;
+
             consulta consulta = new consulta();
             consulta.tablapedido(listBox5.Text,listBox6.Text,listBox10.Text,listBox9.Text,listBox8.Text,listBox7.Text);
             consulta.cerrar();
 
         }
+
+        private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            consulta consultas = new consulta();
+            MySqlDataReader ver;
+            ver = consultas.leer();
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
+
+            if (ver .HasRows) 
+            {
+               while (ver .Read()) 
+                {
+                    int n = dataGridView1.Rows.Add();
+                    dataGridView1.Rows[n].Cells[0].Value = ver.GetValue(0);
+                    dataGridView1.Rows[n].Cells[1].Value = ver.GetString(1);
+                    dataGridView1.Rows[n].Cells[2].Value = ver.GetString(2);
+                    dataGridView1.Rows[n].Cells[3].Value = ver.GetString(3);
+                }
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Insert(1, tabPage4);
+            tabPage5.Parent = null;
+
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Insert(1, tabPage6);
+            tabPage5.Parent = null;
+            listBox5.Items.Add("Hamburguesa de res ");
+            listBox6.Items.Add("$ 135.00 ");
+            string texto = textBox8.Text;
+            listBox9.Items.Add(texto);
+            listBox8.Items.Add(Latinicial);
+            listBox7.Items.Add(Loninicial);
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+
+            tabControl1.TabPages.Insert(1, tabPage6);
+            tabPage5.Parent = null;
+            listBox5.Items.Add("Hamburguesa de pollo ");
+            listBox6.Items.Add("$ 120.00 ");
+            string texto = textBox8.Text;
+            listBox9.Items.Add(texto);
+            listBox8.Items.Add(Latinicial);
+            listBox7.Items.Add(Loninicial);
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Insert(1, tabPage6);
+            tabPage5.Parent = null;
+            listBox5.Items.Add("Hamburguesa de cordero ");
+            listBox6.Items.Add("$ 155.00 ");
+            string texto = textBox8.Text;
+            listBox9.Items.Add(texto);
+            listBox8.Items.Add(Latinicial);
+            listBox7.Items.Add(Loninicial);
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Insert(1, tabPage6);
+            tabPage5.Parent = null;
+            listBox5.Items.Add("Hamburguesa de pescado ");
+            listBox6.Items.Add("$ 115.00 ");
+            string texto = textBox8.Text;
+            listBox9.Items.Add(texto);
+            listBox8.Items.Add(Latinicial);
+            listBox7.Items.Add(Loninicial);
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Insert(1, tabPage6);
+            tabPage5.Parent = null;
+            listBox5.Items.Add("Carne extra");
+            listBox6.Items.Add("$ 35.00 ");
+            string texto = textBox8.Text;
+            listBox9.Items.Add(texto);
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Insert(1, tabPage5);
+            tabPage6.Parent = null;
+        }
+
+        private void listBox9_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Insert(1, tabPage8);
+            tabPage7.Parent = null;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            foreach (RadioButton radioButton in groupBox1.Controls)
+            {
+                if (radioButton.Checked == true)
+                {
+                    label20.Text = label20.Text + " Pan: " + radioButton.Text + ", ";
+                }
+            }
+            foreach (CheckBox checkBox in groupBox5.Controls)
+            {
+                if (checkBox.Checked == true)
+                {
+                    label20.Text += checkBox.Text + "  , ";
+                }
+            }
+            foreach (CheckBox checkBox in groupBox6.Controls)
+            {
+                if (checkBox.Checked == true)
+                {
+                    label20.Text += checkBox.Text + "  , ";
+                }
+            }
+            foreach (RadioButton radioButton in groupBox2.Controls)
+            {
+                if (radioButton.Checked == true)
+                {
+                    label20.Text = label20.Text + "con carne: " + radioButton.Text + ", ";
+
+                }
+            }
+            foreach (RadioButton radioButton in groupBox3.Controls)
+            {
+                if (radioButton.Checked == true)
+                {
+                    label20.Text = label20.Text + radioButton.Text + "  ,";
+                }
+            }
+            foreach (RadioButton radioButton in groupBox4.Controls)
+            {
+                if (radioButton.Checked == true)
+                {
+                    label20.Text = label20.Text + radioButton.Text + "  ,";
+                }
+            }
+            string pedido = label20.Text;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            label20.Text = "Su orden es una hamburguesa con: ";
+        }
+
     }
 }

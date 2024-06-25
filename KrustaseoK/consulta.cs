@@ -67,5 +67,24 @@ namespace KrustaseoK
             cerrar();
 
         }
+        public void historial(string pedido, string total, string metodPago)
+        {
+            string consulta = "INSERT INTO `historial`(`id_pedido`,`Pedido`,`MetodoPago`, `Total`) VALUES(NULL,'" + pedido + "','" + metodPago + "', '" + total + "')";
+            conectar();
+            conex.Open();
+            MySqlCommand comando = new MySqlCommand(consulta, conex);
+            MySqlDataReader ejecuta = comando.ExecuteReader();
+            cerrar();
+        }
+
+        public MySqlDataReader leer()
+        {
+            string consulta = "SELECT id_pedido,Pedido,MetodoPago,Total FROM `tablapedido`;";
+            conectar();
+            conex.Open();
+            MySqlCommand comando = new MySqlCommand(consulta, conex);
+            return comando.ExecuteReader();
+
+        }
     }
 }

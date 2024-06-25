@@ -220,13 +220,14 @@
             this.pictureBox39 = new System.Windows.Forms.PictureBox();
             this.label52 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button11 = new System.Windows.Forms.Button();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label42 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
+            this.button19 = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -289,6 +290,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox38)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox39)).BeginInit();
             this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -620,6 +622,7 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(396, 37);
             this.textBox8.TabIndex = 24;
+            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // label15
             // 
@@ -964,6 +967,7 @@
             this.button9.TabIndex = 51;
             this.button9.Text = "Crear orden";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // label38
             // 
@@ -1087,6 +1091,7 @@
             this.label28.Size = new System.Drawing.Size(136, 29);
             this.label28.TabIndex = 40;
             this.label28.Text = "Carne extra";
+            this.label28.Click += new System.EventHandler(this.label28_Click);
             // 
             // label27
             // 
@@ -1099,6 +1104,7 @@
             this.label27.Size = new System.Drawing.Size(297, 29);
             this.label27.TabIndex = 39;
             this.label27.Text = "Hamburguesa de pescado";
+            this.label27.Click += new System.EventHandler(this.label27_Click);
             // 
             // label26
             // 
@@ -1111,6 +1117,7 @@
             this.label26.Size = new System.Drawing.Size(288, 29);
             this.label26.TabIndex = 38;
             this.label26.Text = "Hamburguesa de cordero";
+            this.label26.Click += new System.EventHandler(this.label26_Click);
             // 
             // label25
             // 
@@ -1123,6 +1130,7 @@
             this.label25.Size = new System.Drawing.Size(258, 29);
             this.label25.TabIndex = 37;
             this.label25.Text = "Hamburguesa de pollo";
+            this.label25.Click += new System.EventHandler(this.label25_Click);
             // 
             // label24
             // 
@@ -1135,6 +1143,7 @@
             this.label24.Size = new System.Drawing.Size(238, 29);
             this.label24.TabIndex = 36;
             this.label24.Text = "Hamburguesa de res";
+            this.label24.Click += new System.EventHandler(this.label24_Click);
             // 
             // pictureBox30
             // 
@@ -1368,6 +1377,7 @@
             this.button7.TabIndex = 37;
             this.button7.Text = "Nueva orden";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -1380,6 +1390,7 @@
             this.button6.TabIndex = 35;
             this.button6.Text = "Ordenar";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // pictureBox19
             // 
@@ -2331,12 +2342,17 @@
             this.button16.TabIndex = 68;
             this.button16.Text = "Regresar";
             this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // listBox10
             // 
             this.listBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox10.FormattingEnabled = true;
             this.listBox10.ItemHeight = 29;
+            this.listBox10.Items.AddRange(new object[] {
+            "",
+            "Efectivo",
+            "Tarjeta"});
             this.listBox10.Location = new System.Drawing.Point(985, 385);
             this.listBox10.Margin = new System.Windows.Forms.Padding(4);
             this.listBox10.Name = "listBox10";
@@ -2477,6 +2493,7 @@
             this.listBox9.Name = "listBox9";
             this.listBox9.Size = new System.Drawing.Size(291, 33);
             this.listBox9.TabIndex = 55;
+            this.listBox9.SelectedIndexChanged += new System.EventHandler(this.listBox9_SelectedIndexChanged);
             // 
             // label47
             // 
@@ -2599,6 +2616,7 @@
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.tabPage7.Controls.Add(this.button19);
             this.tabPage7.Controls.Add(this.button15);
             this.tabPage7.Controls.Add(this.button14);
             this.tabPage7.Controls.Add(this.pictureBox37);
@@ -2711,12 +2729,8 @@
             // tabPage8
             // 
             this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.tabPage8.Controls.Add(this.dataGridView1);
             this.tabPage8.Controls.Add(this.button11);
-            this.tabPage8.Controls.Add(this.listBox4);
-            this.tabPage8.Controls.Add(this.textBox10);
-            this.tabPage8.Controls.Add(this.label41);
-            this.tabPage8.Controls.Add(this.textBox11);
-            this.tabPage8.Controls.Add(this.label42);
             this.tabPage8.Controls.Add(this.label40);
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Margin = new System.Windows.Forms.Padding(4);
@@ -2726,70 +2740,33 @@
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Historial";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.dataGridView1.Location = new System.Drawing.Point(57, 235);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1589, 657);
+            this.dataGridView1.TabIndex = 53;
+            // 
             // button11
             // 
             this.button11.BackColor = System.Drawing.Color.SkyBlue;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(1367, 130);
+            this.button11.Location = new System.Drawing.Point(817, 127);
             this.button11.Margin = new System.Windows.Forms.Padding(4);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(229, 64);
             this.button11.TabIndex = 52;
             this.button11.Text = "Mostrar";
             this.button11.UseVisualStyleBackColor = false;
-            // 
-            // listBox4
-            // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.ItemHeight = 16;
-            this.listBox4.Location = new System.Drawing.Point(95, 251);
-            this.listBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(1852, 644);
-            this.listBox4.TabIndex = 18;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox10.Location = new System.Drawing.Point(1051, 143);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(273, 37);
-            this.textBox10.TabIndex = 17;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(913, 148);
-            this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(126, 29);
-            this.label41.TabIndex = 16;
-            this.label41.Text = "Password:";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(537, 143);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(273, 37);
-            this.textBox11.TabIndex = 15;
-            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(392, 148);
-            this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(128, 33);
-            this.label42.TabIndex = 14;
-            this.label42.Text = "Username:";
-            this.label42.UseCompatibleTextRendering = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // label40
             // 
@@ -2802,6 +2779,47 @@
             this.label40.Size = new System.Drawing.Size(713, 71);
             this.label40.TabIndex = 0;
             this.label40.Text = "HISTORIAL DE PEDIDOS";
+            // 
+            // button19
+            // 
+            this.button19.BackColor = System.Drawing.Color.SkyBlue;
+            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button19.Location = new System.Drawing.Point(1168, 847);
+            this.button19.Margin = new System.Windows.Forms.Padding(4);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(235, 79);
+            this.button19.TabIndex = 56;
+            this.button19.Text = "Historial";
+            this.button19.UseVisualStyleBackColor = false;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "id_pedido";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Pedido";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "MetodoPago";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Total";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 125;
             // 
             // Form1
             // 
@@ -2890,6 +2908,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox39)).EndInit();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3030,11 +3049,6 @@
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Label label43;
@@ -3094,6 +3108,12 @@
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.ListBox listBox10;
         private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
 
