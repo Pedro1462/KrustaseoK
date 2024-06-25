@@ -211,6 +211,7 @@
             this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.button19 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.pictureBox37 = new System.Windows.Forms.PictureBox();
@@ -221,13 +222,12 @@
             this.label52 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button11 = new System.Windows.Forms.Button();
-            this.label40 = new System.Windows.Forms.Label();
-            this.button19 = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button11 = new System.Windows.Forms.Button();
+            this.label40 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -571,6 +571,7 @@
             this.button5.TabIndex = 30;
             this.button5.Text = "Ubicación";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // listBox1
             // 
@@ -917,6 +918,7 @@
             this.gMapControl1.Size = new System.Drawing.Size(1540, 918);
             this.gMapControl1.TabIndex = 0;
             this.gMapControl1.Zoom = 0D;
+            this.gMapControl1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseDoubleClick_1);
             // 
             // tabPage5
             // 
@@ -2330,6 +2332,7 @@
             this.tabPage6.Size = new System.Drawing.Size(2028, 936);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Pedido";
+            this.tabPage6.Click += new System.EventHandler(this.tabPage6_Click);
             // 
             // button16
             // 
@@ -2633,6 +2636,19 @@
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Finalizar";
             // 
+            // button19
+            // 
+            this.button19.BackColor = System.Drawing.Color.SkyBlue;
+            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button19.Location = new System.Drawing.Point(1168, 847);
+            this.button19.Margin = new System.Windows.Forms.Padding(4);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(235, 79);
+            this.button19.TabIndex = 56;
+            this.button19.Text = "Historial";
+            this.button19.UseVisualStyleBackColor = false;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
             // button15
             // 
             this.button15.BackColor = System.Drawing.Color.SkyBlue;
@@ -2755,44 +2771,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1589, 657);
             this.dataGridView1.TabIndex = 53;
             // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.SkyBlue;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(817, 127);
-            this.button11.Margin = new System.Windows.Forms.Padding(4);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(229, 64);
-            this.button11.TabIndex = 52;
-            this.button11.Text = "Mostrar";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Stencil", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.ForeColor = System.Drawing.Color.Indigo;
-            this.label40.Location = new System.Drawing.Point(588, 34);
-            this.label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(713, 71);
-            this.label40.TabIndex = 0;
-            this.label40.Text = "HISTORIAL DE PEDIDOS";
-            // 
-            // button19
-            // 
-            this.button19.BackColor = System.Drawing.Color.SkyBlue;
-            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button19.Location = new System.Drawing.Point(1168, 847);
-            this.button19.Margin = new System.Windows.Forms.Padding(4);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(235, 79);
-            this.button19.TabIndex = 56;
-            this.button19.Text = "Historial";
-            this.button19.UseVisualStyleBackColor = false;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "id_pedido";
@@ -2820,6 +2798,31 @@
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.Width = 125;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.SkyBlue;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(817, 127);
+            this.button11.Margin = new System.Windows.Forms.Padding(4);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(229, 64);
+            this.button11.TabIndex = 52;
+            this.button11.Text = "Mostrar";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Stencil", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.ForeColor = System.Drawing.Color.Indigo;
+            this.label40.Location = new System.Drawing.Point(588, 34);
+            this.label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(713, 71);
+            this.label40.TabIndex = 0;
+            this.label40.Text = "HISTORIAL DE PEDIDOS";
             // 
             // Form1
             // 

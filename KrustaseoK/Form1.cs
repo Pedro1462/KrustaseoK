@@ -23,6 +23,11 @@ namespace KrustaseoK
         double Latinicial = 21.1977162234265;
         double Loninicial = -86.8570518493652;
         private bool soloUnaRuta = false;
+        string pedido = null;
+        string total = null;
+        string orden = null;
+        string direccion = null;
+        string segundaDireccion = null;
 
 
         void sucursal()
@@ -112,7 +117,7 @@ namespace KrustaseoK
             consulta consulta = new consulta();
             MySqlDataReader ver;
             ver = consulta.filtroInicioSesion(textBox1.Text, textBox2.Text);
-
+            
             if (ver.HasRows)
             {
                 ver.Read();
@@ -128,6 +133,7 @@ namespace KrustaseoK
                 if (textBox1.Text == usuario && textBox2.Text == contraseña)
                 {
                     string texto = textBox1.Text;
+                    orden = textBox1.Text;
                     listBox9.Items.Add(textBox1.Text);
                     MessageBox.Show("Se ha iniciado sesión correctamente");
                     textBox1.Clear();
@@ -190,7 +196,9 @@ namespace KrustaseoK
 
 
             consulta consulta = new consulta();
-            consulta.agregarRegistro(textBox3.Text, textBox4.Text, textBox8.Text, textBox5.Text, textBox9.Text, listBox1.Text, listBox2.Text, textBox6.Text);
+            string dir1 = listBox1.Text;
+            string dir2 = listBox2.Text;
+            consulta.agregarRegistro(textBox3.Text, textBox4.Text, textBox8.Text, textBox5.Text, textBox9.Text, dir1, dir2, textBox6.Text);
             MessageBox.Show("Registro Exitoso");
             if (tabPage1.Parent == null)
             {
@@ -331,6 +339,7 @@ namespace KrustaseoK
         {
             consulta consulta = new consulta();
             consulta.agregarPago(textBox18.Text,textBox17.Text,comboBox1.Text);
+            listBox10.Items.Add(comboBox1.Text);
 
             
 
@@ -403,6 +412,11 @@ namespace KrustaseoK
             tabPage6.Parent = null;
 
             consulta consulta = new consulta();
+          string texto = textBox8.Text;
+             listBox9.Items.Add(texto);
+           //consulta.tablapedido ( listBox5.Items.Add(texto)  );
+
+
             consulta.tablapedido(listBox5.Text,listBox6.Text,listBox10.Text,listBox9.Text,listBox8.Text,listBox7.Text);
             consulta.cerrar();
 
@@ -415,9 +429,10 @@ namespace KrustaseoK
 
         private void button11_Click(object sender, EventArgs e)
         {
-            consulta consultas = new consulta();
+            consulta consulta = new consulta();
+
             MySqlDataReader ver;
-            ver = consultas.leer();
+            ver = consulta.leer();
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
 
@@ -443,14 +458,10 @@ namespace KrustaseoK
 
         private void label24_Click(object sender, EventArgs e)
         {
-            tabControl1.TabPages.Insert(1, tabPage6);
-            tabPage5.Parent = null;
-            listBox5.Items.Add("Hamburguesa de res ");
-            listBox6.Items.Add("$ 135.00 ");
-            string texto = textBox8.Text;
-            listBox9.Items.Add(texto);
-            listBox8.Items.Add(Latinicial);
-            listBox7.Items.Add(Loninicial);
+           pedido = label24.Text;
+            total =  label34.Text;
+            
+
         }
 
         private void label25_Click(object sender, EventArgs e)
@@ -499,6 +510,8 @@ namespace KrustaseoK
             listBox6.Items.Add("$ 35.00 ");
             string texto = textBox8.Text;
             listBox9.Items.Add(texto);
+            listBox8.Items.Add(Latinicial);
+            listBox7.Items.Add(Loninicial);
         }
 
         private void button16_Click(object sender, EventArgs e)
@@ -576,5 +589,38 @@ namespace KrustaseoK
             label20.Text = "Su orden es una hamburguesa con: ";
         }
 
+        private void tabPage6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void  gMapControl1_MouseDoubleClick_1(object sender, MouseEventArgs e)
+        {
+            if (soloUnaRuta) return;
+            double lat = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lat;
+            double lon = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lng;
+            marker.Position = new PointLatLng(lat, lon);
+            marker.ToolTipText = string.Format("Casa \n Latitud:{0} \n Longitud {1}", lat, lon);
+            listBox1.Items.Add(lat);
+            listBox2.Items.Add(lon);
+            if (listBox1.Items.Count >= 1 && listBox2.Items.Count >= 1)
+            {
+                double startLat = Latinicial;
+                double startLon = Loninicial;
+                double endLat = lat;
+                double endLon = lon;
+                dibugarRuta(new PointLatLng(startLat, startLon), new PointLatLng(endLat, endLon));
+                soloUnaRuta = true;
+            }
+            await Task.Delay(3000);
+            tabControl1.SelectedTab = tabPage2;
+            tabPage3.Parent = null;
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Insert(1, tabPage3);
+            tabControl1.SelectedTab = tabPage3;
+        }
     }
 }
