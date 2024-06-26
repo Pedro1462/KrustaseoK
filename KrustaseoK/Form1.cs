@@ -83,6 +83,7 @@ namespace KrustaseoK
             tabPage7.Parent = null;
             tabPage8.Parent = null;
             tabPage9.Parent = null;
+            //tabPage10.Parent = null;
             /*label60.Parent = null;
             label57.Parent = null;
             label55.Parent = null;
@@ -347,7 +348,7 @@ namespace KrustaseoK
             tabControl1.TabPages.Insert(1, tabPage6);
                 tabPage9.Parent = null;
             
-            MessageBox.Show("Pago Exitoso");
+            MessageBox.Show("Cobro Exitoso");
             consulta.cerrar();
         }
 
@@ -363,7 +364,7 @@ namespace KrustaseoK
         private void button10_Click(object sender, EventArgs e)
         {
             tabControl1.TabPages.Insert(1, tabPage9);
-            tabControl1.SelectedTab = tabPage9;
+            tabPage4.Parent = null;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -374,29 +375,25 @@ namespace KrustaseoK
             {
                 if (comboBox1.Text == "Efectivo")
                 {
-                    label60.Parent = null;
-                    label57.Parent = null;
-                    label55.Parent = null;
-                    label59.Parent = null;
-                    textBox16.Parent = null;
-                    textBox12.Parent = null;
-                    textBox13.Parent = null;
-                    textBox15.Parent = null;
-                    if (reiniciar == true)
-                    {
-                        return;
-                    }
-                } else 
+                    label60.Visible = false;
+                    label57.Visible=false;
+                    label55.Visible = false;
+                    label59.Visible= false;
+                    textBox16.Visible = false;
+                    textBox12.Visible= false;
+                    textBox13.Visible= false;
+                    textBox15.Visible= false;
+                    
+                } else if(comboBox1.Text == "Tarjeta Credito/Debito")
                 {
-
-                    label60.Parent = this;
-                    label57.Parent = this;
-                    label55.Parent = this;
-                    label59.Parent = this;
-                    textBox16.Parent = this;
-                    textBox12.Parent = this;
-                    textBox13.Parent = this;
-                    textBox15.Parent = this;
+                    label60.Visible = true;
+                    label57.Visible = true;
+                    label55.Visible = true;
+                    label59.Visible = true;
+                    textBox16.Visible = true;
+                    textBox12.Visible = true;
+                    textBox13.Visible = true;
+                    textBox15.Visible = true;
                 }
 
             } 
@@ -458,14 +455,14 @@ namespace KrustaseoK
 
         private void button9_Click(object sender, EventArgs e)
         {
-            tabControl1.TabPages.Insert(1, tabPage4);
-            tabPage5.Parent = null;
+            /*tabControl1.TabPages.Insert(1, tabPage4);
+            tabPage5.Parent = null;*/
 
         }
 
         private void label24_Click(object sender, EventArgs e)
         {
-            tabControl1.TabPages.Insert(1, tabPage6);
+            tabControl1.TabPages.Insert(1, tabPage4);
             tabPage5.Parent = null;
             textBox14.Text ="Hamburguesa de res ";
             textBox19.Text = "$ 135.00 ";
@@ -481,7 +478,7 @@ namespace KrustaseoK
         {
 
 
-            tabControl1.TabPages.Insert(1, tabPage6);
+            tabControl1.TabPages.Insert(1, tabPage4);
             tabPage5.Parent = null;
             textBox14.Text="Hamburguesa de pollo ";
             textBox19.Text = "$ 120.00 ";
@@ -493,7 +490,7 @@ namespace KrustaseoK
 
         private void label26_Click(object sender, EventArgs e)
         {
-            tabControl1.TabPages.Insert(1, tabPage6);
+            tabControl1.TabPages.Insert(1, tabPage4);
             tabPage5.Parent = null;
             textBox14.Text="Hamburguesa de cordero ";
             textBox19.Text = "$ 155.00 ";
@@ -505,7 +502,7 @@ namespace KrustaseoK
 
         private void label27_Click(object sender, EventArgs e)
         {
-            tabControl1.TabPages.Insert(1, tabPage6);
+            tabControl1.TabPages.Insert(1, tabPage4);
             tabPage5.Parent = null;
             textBox14.Text = "Hamburguesa de pescado ";
             textBox19.Text = "$ 115.00 ";
@@ -572,14 +569,14 @@ namespace KrustaseoK
                     label20.Text += checkBox.Text + "  , ";
                 }
             }
-            foreach (RadioButton radioButton in groupBox2.Controls)
+            /*foreach (RadioButton radioButton in groupBox2.Controls)
             {
                 if (radioButton.Checked == true)
                 {
                     label20.Text = label20.Text + "con carne: " + radioButton.Text + ", ";
 
                 }
-            }
+            }*/
             foreach (RadioButton radioButton in groupBox3.Controls)
             {
                 if (radioButton.Checked == true)
@@ -652,10 +649,36 @@ namespace KrustaseoK
 
         private void button20_Click(object sender, EventArgs e)
         {
+            /*tabControl1.TabPages.Insert(1, tabPage10);
+            tabPage9.Parent = null;*/
 
-            reiniciar = true;
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+           /* tabControl1.TabPages.Insert(1, tabPage9);
+            tabPage10.Parent = null;*/
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            /*tabControl1.TabPages.Insert(1, tabPage9);
+            tabPage10.Parent = null;
             
 
+            foreach(RadioButton radioButton in groupBox7.Controls)
+            {
+                if (radioButton.Checked == true)
+                {
+                    textBox21.Text += radioButton.Text;
+                }
+            }*/
+        }
+
+        private void button20_Click_1(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Insert(1, tabPage5);
+            tabPage4.Parent = null;
         }
     }
 }
