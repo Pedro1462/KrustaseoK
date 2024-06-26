@@ -93,14 +93,14 @@ namespace KrustaseoK
             tabPage8.Parent = null;
             tabPage9.Parent = null;
             //tabPage10.Parent = null;
-            /*label60.Parent = null;
-            label57.Parent = null;
-            label55.Parent = null;
-            label59.Parent = null;
-            textBox16.Parent = null;
-            textBox12.Parent = null;
-            textBox13.Parent = null;
-            textBox15.Parent = null;*/
+            label60.Visible = false;
+            label57.Visible = false;
+            label55.Visible = false;
+            label59.Visible = false;
+            textBox16.Visible = false;
+            textBox12.Visible = false;
+            textBox13.Visible = false;
+            textBox15.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -128,55 +128,43 @@ namespace KrustaseoK
             consulta consulta = new consulta();
             MySqlDataReader ver = consulta.filtroInicioSesion(textBox1.Text, textBox2.Text);
 
+
             if (ver.HasRows)
             {
                 ver.Read();
 
                 string usuario = ver.GetString(ver.GetOrdinal("Usuario"));
                 string contraseña = ver.GetString(ver.GetOrdinal("Contraseña"));
-                int indiceDir1 = ver.GetOrdinal("Direccion1");
-                int indiceDir2 = ver.GetOrdinal("Direccion2");
+                string indiceDir1 = ver.GetString(ver.GetOrdinal("Direccion1"));
+                string indiceDir2 = ver.GetString(ver.GetOrdinal("Direccion2"));
 
-                string dir1String = ver.GetString(indiceDir1);
-                string dir2String = ver.GetString(indiceDir2);
+                textBox21.Text = indiceDir1;
+                textBox22.Text = indiceDir2;
 
-                if (double.TryParse(dir1String, out double dir1) && double.TryParse(dir2String, out double dir2))
+
+                if (textBox1.Text == usuario && textBox2.Text == contraseña)
                 {
-                    textBox21.Text = dir1.ToString();
-                    textBox22.Text = dir2.ToString();
+                    orden = textBox1.Text;
+                    listBox9.Items.Add(textBox1.Text);
+                    MessageBox.Show("Se ha iniciado sesión correctamente");
+                    textBox1.Clear();
+                    textBox2.Clear();
 
-                    if (textBox1.Text == usuario && textBox2.Text == contraseña)
-                    {
-                        orden = textBox1.Text;
-                        listBox9.Items.Add(textBox1.Text);
-                        MessageBox.Show("Se ha iniciado sesión correctamente");
-                        textBox1.Clear();
-                        textBox2.Clear();
-
-                        tabControl1.TabPages.Insert(1, tabPage5);
-                        tabPage1.Parent = null;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Inicio de sesión incorrecto");
-                        textBox1.Clear();
-                        textBox2.Clear();
-                        textBox1.Focus();
-                        return;
-                    }
+                    tabControl1.TabPages.Insert(1, tabPage5);
+                    tabPage1.Parent = null;
                 }
                 else
                 {
-                    MessageBox.Show("Las direcciones no son coordenadas geográficas válidas.");
+                    MessageBox.Show("Inicio de sesión incorrecto");
+                    textBox1.Clear();
+                    textBox2.Clear();
+                    textBox1.Focus();
+                    return;
                 }
+
+
             }
-            else
-            {
-                MessageBox.Show("Inicio de sesión incorrecto");
-                textBox1.Clear();
-                textBox2.Clear();
-                textBox1.Focus();
-            }
+
 
             ver.Close();
             consulta.cerrar();
@@ -304,25 +292,7 @@ namespace KrustaseoK
 
         }
 
-        private async void gMapControl1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            lat = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lat;
-            lon = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lng;
-            marker.Position = new PointLatLng(lat, lon);
-            marker.ToolTipText = string.Format("Casa \n Latitud:{0} \n Longitud {1}", lat, lon);
-
-            double startLat = Latinicial;
-            double startLon = Loninicial;
-            double endLat = lat;
-            double endLon = lon;
-
-            dibugarRuta(new PointLatLng(startLat, startLon), new PointLatLng(endLat, endLon));
-            soloUnaRuta = true;
-
-            await Task.Delay(3000);
-            tabControl1.SelectedTab = tabPage2;
-            tabPage3.Parent = null;
-        }
+       
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -352,9 +322,6 @@ namespace KrustaseoK
             consulta.agregarPago(textBox18.Text,textBox17.Text,comboBox1.Text);
             textBox20.Text = comboBox1.Text;
 
-            
-
-            
 
             tabControl1.TabPages.Insert(1, tabPage6);
                 tabPage9.Parent = null;
@@ -479,8 +446,7 @@ namespace KrustaseoK
             textBox19.Text = "$ 135.00 ";
             string texto = textBox8.Text;
             listBox9.Items.Add(texto);
-            textBox21.Text = lat.ToString();
-            textBox22.Text =lon.ToString();
+            
 
 
         }
@@ -495,8 +461,7 @@ namespace KrustaseoK
             textBox19.Text = "$ 120.00 ";
             string texto = textBox8.Text;
             listBox9.Items.Add(texto);
-           textBox21.Text = lat.ToString();
-            textBox22.Text = lon.ToString();
+          
         }
 
         private void label26_Click(object sender, EventArgs e)
@@ -507,8 +472,7 @@ namespace KrustaseoK
             textBox19.Text = "$ 155.00 ";
             string texto = textBox8.Text;
             listBox9.Items.Add(texto);
-            textBox21.Text = lat.ToString();
-            textBox22.Text = lon.ToString();
+           
         }
 
         private void label27_Click(object sender, EventArgs e)
@@ -519,8 +483,7 @@ namespace KrustaseoK
             textBox19.Text = "$ 115.00 ";
             string texto = textBox8.Text;
             listBox9.Items.Add(texto);
-            textBox21.Text = lat.ToString();
-            textBox22.Text = lon.ToString();
+           
         }
 
         private void label28_Click(object sender, EventArgs e)
@@ -531,8 +494,7 @@ namespace KrustaseoK
             textBox19.Text = "$ 35.00 ";
             string texto = textBox8.Text;
             listBox9.Items.Add(texto);
-            textBox21.Text = lat.ToString();
-            textBox22.Text = lon.ToString();
+
         }
 
         private void button16_Click(object sender, EventArgs e)
@@ -629,8 +591,7 @@ namespace KrustaseoK
                 double startLon = Loninicial;
                 double endLat = lat;
                 double endLon = lon;
-            textBox21.Text = lat.ToString();
-            textBox22.Text = lon.ToString();
+           
             dibugarRuta(new PointLatLng(startLat, startLon), new PointLatLng(endLat, endLon));
              
             
@@ -724,6 +685,26 @@ namespace KrustaseoK
 
         private void textBox20_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Insert(1, tabPage5);
+            tabPage7.Parent = null;
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Insert(1, tabPage1);
+            tabPage7.Parent = null;
+          
+        }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+             tabControl1.TabPages.Insert(1, tabPage7);
+           tabPage8.Parent = null;
 
         }
     }
