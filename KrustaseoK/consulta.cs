@@ -40,13 +40,15 @@ namespace KrustaseoK
 
         public MySqlDataReader filtroInicioSesion(string filtroInicioSesionUsuario, string filtroInicioSesionContraseña)
         {
-            string consulta = "SELECT Usuario, Contraseña FROM `registro` WHERE Usuario= '"+ filtroInicioSesionUsuario+"' AND Contraseña = '"+filtroInicioSesionContraseña+"';";
+            string consulta = "SELECT Usuario, Contraseña, Direccion1, Direccion2 FROM `registro` WHERE Usuario= @usuario AND Contraseña = @contraseña;";
             conectar();
             conex.Open();
-            MySqlCommand commando = new MySqlCommand( consulta,conex);
-            return commando.ExecuteReader();
-            
+            MySqlCommand comando = new MySqlCommand(consulta, conex);
+            comando.Parameters.AddWithValue("@usuario", filtroInicioSesionUsuario);
+            comando.Parameters.AddWithValue("@contraseña", filtroInicioSesionContraseña);
+            return comando.ExecuteReader();
         }
+
 
         public void agregarPago( string nombre, string apellido, string metodoPago)
         {
@@ -87,5 +89,15 @@ namespace KrustaseoK
             return comando.ExecuteReader();
 
         }
+        public MySqlDataReader leerUsuario(int usuarioId)
+        {
+            string consulta = "SELECT id_registro, Nombre, Apellido, Usuario, noCel, Correo, Direccion1, Direccion2, Contraseña FROM `registro` WHERE id_registro = @usuarioId;";
+            conectar();
+            conex.Open();
+            MySqlCommand comando = new MySqlCommand(consulta, conex);
+            comando.Parameters.AddWithValue("@usuarioId", usuarioId);
+            return comando.ExecuteReader();
+        }
+            
     }
 }

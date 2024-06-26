@@ -12,7 +12,6 @@ using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
-
 namespace KrustaseoK
 {
     public partial class Form1 : Form
@@ -29,6 +28,9 @@ namespace KrustaseoK
         string direccion = null;
         string segundaDireccion = null;
         public bool reiniciar = false;
+        double lat ;
+        double lon;
+        private bool registro = false;
 
 
         void sucursal()
@@ -50,16 +52,22 @@ namespace KrustaseoK
             marker.ToolTipText = string.Format("Sucursal \n Latitud:{0} \n Longitud {1}", Latinicial, Loninicial);
             gMapControl1.Overlays.Add(markerOverlay);
 
-            
+
             routeOverlay = new GMapOverlay("routes");
             gMapControl1.Overlays.Add(routeOverlay);
 
         }
-        private void dibugarRuta(PointLatLng start, PointLatLng end)
+        private void limpiarRuta()
         {
-            
             routeOverlay.Routes.Clear();
             routeOverlay.Markers.Clear();
+            soloUnaRuta = false;
+        }
+
+        private void dibugarRuta(PointLatLng start, PointLatLng end)
+        {
+            limpiarRuta();
+
             GMarkerGoogle startMarker = new GMarkerGoogle(start, GMarkerGoogleType.green);
             GMarkerGoogle endMarker = new GMarkerGoogle(end, GMarkerGoogleType.red);
             routeOverlay.Markers.Add(startMarker);
@@ -71,7 +79,8 @@ namespace KrustaseoK
             };
             routeOverlay.Routes.Add(route);
             gMapControl1.ZoomAndCenterMarkers("routes");
-        }
+        
+    }
         public Form1()
         {
             InitializeComponent();
@@ -117,43 +126,48 @@ namespace KrustaseoK
         private void button1_Click_1(object sender, EventArgs e)
         {
             consulta consulta = new consulta();
-            MySqlDataReader ver;
-            ver = consulta.filtroInicioSesion(textBox1.Text, textBox2.Text);
-            
+            MySqlDataReader ver = consulta.filtroInicioSesion(textBox1.Text, textBox2.Text);
+
             if (ver.HasRows)
             {
                 ver.Read();
 
-                string usuarioColumna = "Usuario";
-                int indiceUsuarioColumna = ver.GetOrdinal(usuarioColumna);
-                string usuario = ver.GetString(indiceUsuarioColumna);
+                string usuario = ver.GetString(ver.GetOrdinal("Usuario"));
+                string contraseña = ver.GetString(ver.GetOrdinal("Contraseña"));
+                int indiceDir1 = ver.GetOrdinal("Direccion1");
+                int indiceDir2 = ver.GetOrdinal("Direccion2");
 
-                string contraseñaColumna = "Contraseña";
-                int indiceContraseñaColumna = ver.GetOrdinal(contraseñaColumna);
-                string contraseña = ver.GetString(indiceContraseñaColumna);
+                string dir1String = ver.GetString(indiceDir1);
+                string dir2String = ver.GetString(indiceDir2);
 
-                if (textBox1.Text == usuario && textBox2.Text == contraseña)
+                if (double.TryParse(dir1String, out double dir1) && double.TryParse(dir2String, out double dir2))
                 {
-                    string texto = textBox1.Text;
-                    orden = textBox1.Text;
-                    listBox9.Items.Add(textBox1.Text);
-                    MessageBox.Show("Se ha iniciado sesión correctamente");
-                    textBox1.Clear();
-                    textBox2.Clear();
+                    textBox21.Text = dir1.ToString();
+                    textBox22.Text = dir2.ToString();
 
+                    if (textBox1.Text == usuario && textBox2.Text == contraseña)
+                    {
+                        orden = textBox1.Text;
+                        listBox9.Items.Add(textBox1.Text);
+                        MessageBox.Show("Se ha iniciado sesión correctamente");
+                        textBox1.Clear();
+                        textBox2.Clear();
 
-                    tabControl1.TabPages.Insert(1, tabPage5);
-                    tabPage1.Parent = null;
-                    
-
+                        tabControl1.TabPages.Insert(1, tabPage5);
+                        tabPage1.Parent = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Inicio de sesión incorrecto");
+                        textBox1.Clear();
+                        textBox2.Clear();
+                        textBox1.Focus();
+                        return;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Inicio de sesión incorrecto");
-                    textBox1.Clear();
-                    textBox2.Clear();
-                    textBox1.Focus();
-                    return;
+                    MessageBox.Show("Las direcciones no son coordenadas geográficas válidas.");
                 }
             }
             else
@@ -163,11 +177,11 @@ namespace KrustaseoK
                 textBox2.Clear();
                 textBox1.Focus();
             }
+
+            ver.Close();
             consulta.cerrar();
-
-            
-
         }
+
 
         private void label9_Click(object sender, EventArgs e)
         {
@@ -179,7 +193,7 @@ namespace KrustaseoK
 
         }
 
-        private async void button4_Click(object sender, EventArgs e)
+        private  void button4_Click(object sender, EventArgs e)
         {
             //dddd
             /*await Task.Delay(2000);
@@ -292,25 +306,22 @@ namespace KrustaseoK
 
         private async void gMapControl1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (soloUnaRuta) return;
-            double lat = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lat;
-            double lon = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lng;
+            lat = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lat;
+            lon = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lng;
             marker.Position = new PointLatLng(lat, lon);
             marker.ToolTipText = string.Format("Casa \n Latitud:{0} \n Longitud {1}", lat, lon);
-            textBox10.Text = lat.ToString();  
-            textBox11.Text = lon.ToString();
-            
-                double startLat = Latinicial;
-                double startLon = Loninicial;
-                double endLat = lat;
-                double endLon = lon;
-                dibugarRuta(new PointLatLng(startLat, startLon), new PointLatLng(endLat, endLon));
-                soloUnaRuta = true;
-            
+
+            double startLat = Latinicial;
+            double startLon = Loninicial;
+            double endLat = lat;
+            double endLon = lon;
+
+            dibugarRuta(new PointLatLng(startLat, startLon), new PointLatLng(endLat, endLon));
+            soloUnaRuta = true;
+
             await Task.Delay(3000);
             tabControl1.SelectedTab = tabPage2;
             tabPage3.Parent = null;
-            
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -418,10 +429,10 @@ namespace KrustaseoK
             consulta consulta = new consulta();
           string texto = textBox8.Text;
              listBox9.Items.Add(texto);
-           //consulta.tablapedido ( listBox5.Items.Add(texto)  );
+         
 
 
-            consulta.tablapedido(textBox14.Text,textBox19.Text,textBox20.Text,listBox9.Text,listBox8.Text,listBox7.Text);
+            consulta.tablapedido(textBox14.Text,textBox19.Text,textBox20.Text,listBox9.Text,textBox21.Text,textBox22.Text);
             consulta.cerrar();
 
         }
@@ -468,8 +479,8 @@ namespace KrustaseoK
             textBox19.Text = "$ 135.00 ";
             string texto = textBox8.Text;
             listBox9.Items.Add(texto);
-            listBox8.Items.Add(Latinicial);
-            listBox7.Items.Add(Loninicial);
+            textBox21.Text = lat.ToString();
+            textBox22.Text =lon.ToString();
 
 
         }
@@ -484,8 +495,8 @@ namespace KrustaseoK
             textBox19.Text = "$ 120.00 ";
             string texto = textBox8.Text;
             listBox9.Items.Add(texto);
-            listBox8.Items.Add(Latinicial);
-            listBox7.Items.Add(Loninicial);
+           textBox21.Text = lat.ToString();
+            textBox22.Text = lon.ToString();
         }
 
         private void label26_Click(object sender, EventArgs e)
@@ -496,8 +507,8 @@ namespace KrustaseoK
             textBox19.Text = "$ 155.00 ";
             string texto = textBox8.Text;
             listBox9.Items.Add(texto);
-            listBox8.Items.Add(Latinicial);
-            listBox7.Items.Add(Loninicial);
+            textBox21.Text = lat.ToString();
+            textBox22.Text = lon.ToString();
         }
 
         private void label27_Click(object sender, EventArgs e)
@@ -508,8 +519,8 @@ namespace KrustaseoK
             textBox19.Text = "$ 115.00 ";
             string texto = textBox8.Text;
             listBox9.Items.Add(texto);
-            listBox8.Items.Add(Latinicial);
-            listBox7.Items.Add(Loninicial);
+            textBox21.Text = lat.ToString();
+            textBox22.Text = lon.ToString();
         }
 
         private void label28_Click(object sender, EventArgs e)
@@ -520,8 +531,8 @@ namespace KrustaseoK
             textBox19.Text = "$ 35.00 ";
             string texto = textBox8.Text;
             listBox9.Items.Add(texto);
-            listBox8.Items.Add(Latinicial);
-            listBox7.Items.Add(Loninicial);
+            textBox21.Text = lat.ToString();
+            textBox22.Text = lon.ToString();
         }
 
         private void button16_Click(object sender, EventArgs e)
@@ -607,27 +618,38 @@ namespace KrustaseoK
         private async void  gMapControl1_MouseDoubleClick_1(object sender, MouseEventArgs e)
         {
             if (soloUnaRuta) return;
-            double lat = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lat;
-            double lon = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lng;
+             lat = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lat;
+             lon = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lng;
             marker.Position = new PointLatLng(lat, lon);
             marker.ToolTipText = string.Format("Casa \n Latitud:{0} \n Longitud {1}", lat, lon);
+
             textBox10.Text = lat.ToString();
             textBox11.Text = lon.ToString();
-           
-                double startLat = Latinicial;
+            double startLat = Latinicial;
                 double startLon = Loninicial;
                 double endLat = lat;
                 double endLon = lon;
-                dibugarRuta(new PointLatLng(startLat, startLon), new PointLatLng(endLat, endLon));
-                soloUnaRuta = true;
+            textBox21.Text = lat.ToString();
+            textBox22.Text = lon.ToString();
+            dibugarRuta(new PointLatLng(startLat, startLon), new PointLatLng(endLat, endLon));
+             
             
             await Task.Delay(3000);
-            tabControl1.SelectedTab = tabPage2;
-            tabPage3.Parent = null;
+            if (registro == true) {
+               
+                tabControl1.SelectedTab = tabPage2;
+                tabPage3.Parent = null;
+            }else if(registro == false) {
+               
+                tabControl1.TabPages.Insert(1, tabPage4);
+                tabPage3.Parent = null;
+            }
+           
         }
 
         private void button5_Click_1(object sender, EventArgs e)
         {
+            registro = true;
             tabControl1.TabPages.Insert(1, tabPage3);
             tabControl1.SelectedTab = tabPage3;
         }
@@ -679,6 +701,30 @@ namespace KrustaseoK
         {
             tabControl1.TabPages.Insert(1, tabPage5);
             tabPage4.Parent = null;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gMapControl1_Load_1(object sender, EventArgs e)
+        {
+            limpiarRuta();
+       
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            
+            tabControl1.TabPages.Insert(1, tabPage3);
+            tabPage4.Parent = null;
+            tabControl1.SelectedTab = tabPage3;
+        }
+
+        private void textBox20_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

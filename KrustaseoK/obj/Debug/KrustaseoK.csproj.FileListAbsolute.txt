@@ -30,3 +30,21 @@ C:\Users\pedro\Documents\Pedro\Universidad\Cuatrimestre 3\Programacion Visual\Kr
 C:\Users\pedro\Documents\Pedro\Universidad\Cuatrimestre 3\Programacion Visual\KrustaseoK\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.csproj.Up2Date
 C:\Users\pedro\Documents\Pedro\Universidad\Cuatrimestre 3\Programacion Visual\KrustaseoK\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.exe
 C:\Users\pedro\Documents\Pedro\Universidad\Cuatrimestre 3\Programacion Visual\KrustaseoK\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.pdb
+C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\bin\Debug\KrustaseoK.exe.config
+C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\bin\Debug\KrustaseoK.exe
+C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\bin\Debug\KrustaseoK.pdb
+C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\bin\Debug\GMap.NET.Core.dll
+C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\bin\Debug\System.Memory.dll
+C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\bin\Debug\System.Buffers.dll
+C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\bin\Debug\MySql.Data.xml
+C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.csproj.AssemblyReference.cache
+C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.Form1.resources
+C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.Properties.Resources.resources
+C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.csproj.GenerateResource.cache
+C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.csproj.CoreCompileInputs.cache
+C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.csproj.Up2Date
+C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.exe
+C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.pdb
