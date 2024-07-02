@@ -81,6 +81,7 @@ namespace KrustaseoK
             gMapControl1.ZoomAndCenterMarkers("routes");
         
     }
+        Form2 ventana = new Form2();
         public Form1()
         {
             InitializeComponent();
@@ -168,6 +169,7 @@ namespace KrustaseoK
 
             ver.Close();
             consulta.cerrar();
+            
         }
 
 
@@ -565,6 +567,7 @@ namespace KrustaseoK
                 }
             }
             string pedido = label20.Text;
+            
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -706,6 +709,52 @@ namespace KrustaseoK
              tabControl1.TabPages.Insert(1, tabPage7);
            tabPage8.Parent = null;
 
+        }
+
+        private void label28_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button12_Click_2(object sender, EventArgs e)
+        {
+            radioButton5.Checked = radioButton6.Checked;
+            radioButton7.Checked = radioButton8.Checked;
+        }
+
+        private void button21_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label39_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblStep1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button22_Click_1(object sender, EventArgs e)
+        {
+            ventana.Visible = true;
         }
     }
 }

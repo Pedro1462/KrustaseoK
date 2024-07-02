@@ -218,7 +218,33 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button11 = new System.Windows.Forms.Button();
             this.label40 = new System.Windows.Forms.Label();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.button21 = new System.Windows.Forms.Button();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.lblStep4 = new System.Windows.Forms.Label();
+            this.pbStep4 = new System.Windows.Forms.PictureBox();
+            this.button12 = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.label28 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.pbStep1 = new System.Windows.Forms.PictureBox();
+            this.lblStep1 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.pbStep2 = new System.Windows.Forms.PictureBox();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.lblStep3 = new System.Windows.Forms.Label();
+            this.pbStep3 = new System.Windows.Forms.PictureBox();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.button22 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -279,6 +305,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox39)).BeginInit();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage10.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStep4)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStep1)).BeginInit();
+            this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStep2)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStep3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -292,6 +327,7 @@
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Location = new System.Drawing.Point(1, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
@@ -1226,7 +1262,7 @@
             // 
             this.button20.BackColor = System.Drawing.Color.SkyBlue;
             this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button20.Location = new System.Drawing.Point(877, 756);
+            this.button20.Location = new System.Drawing.Point(877, 824);
             this.button20.Margin = new System.Windows.Forms.Padding(4);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(204, 94);
@@ -1253,7 +1289,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label20.Location = new System.Drawing.Point(9, 741);
+            this.label20.Location = new System.Drawing.Point(14, 636);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(334, 25);
@@ -1562,10 +1598,10 @@
             this.radioButton13.Location = new System.Drawing.Point(21, 34);
             this.radioButton13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton13.Name = "radioButton13";
-            this.radioButton13.Size = new System.Drawing.Size(210, 33);
+            this.radioButton13.Size = new System.Drawing.Size(159, 33);
             this.radioButton13.TabIndex = 1;
             this.radioButton13.TabStop = true;
-            this.radioButton13.Text = "Para comer aqui";
+            this.radioButton13.Text = "Comer aquí";
             this.radioButton13.UseVisualStyleBackColor = true;
             this.radioButton13.CheckedChanged += new System.EventHandler(this.radioButton13_CheckedChanged);
             // 
@@ -2653,11 +2689,281 @@
             this.label40.TabIndex = 0;
             this.label40.Text = "HISTORIAL DE PEDIDOS";
             // 
+            // tabPage10
+            // 
+            this.tabPage10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.tabPage10.Controls.Add(this.button22);
+            this.tabPage10.Controls.Add(this.textBox23);
+            this.tabPage10.Controls.Add(this.label38);
+            this.tabPage10.Controls.Add(this.button21);
+            this.tabPage10.Controls.Add(this.lblMessage);
+            this.tabPage10.Controls.Add(this.groupBox8);
+            this.tabPage10.Controls.Add(this.button12);
+            this.tabPage10.Controls.Add(this.statusStrip1);
+            this.tabPage10.Controls.Add(this.label28);
+            this.tabPage10.Controls.Add(this.groupBox2);
+            this.tabPage10.Controls.Add(this.groupBox9);
+            this.tabPage10.Controls.Add(this.groupBox7);
+            this.tabPage10.Location = new System.Drawing.Point(4, 25);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Size = new System.Drawing.Size(2028, 936);
+            this.tabPage10.TabIndex = 9;
+            this.tabPage10.Text = "Estatus";
+            // 
+            // button21
+            // 
+            this.button21.BackColor = System.Drawing.Color.SkyBlue;
+            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button21.Location = new System.Drawing.Point(1648, 814);
+            this.button21.Margin = new System.Windows.Forms.Padding(4);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(235, 79);
+            this.button21.TabIndex = 55;
+            this.button21.Text = "Regresar ";
+            this.button21.UseVisualStyleBackColor = false;
+            this.button21.Click += new System.EventHandler(this.button21_Click_1);
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.Location = new System.Drawing.Point(559, 790);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(300, 20);
+            this.lblMessage.TabIndex = 19;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.radioButton6);
+            this.groupBox8.Controls.Add(this.lblStep4);
+            this.groupBox8.Controls.Add(this.pbStep4);
+            this.groupBox8.Location = new System.Drawing.Point(1380, 275);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(331, 355);
+            this.groupBox8.TabIndex = 8;
+            this.groupBox8.TabStop = false;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(144, 297);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(17, 16);
+            this.radioButton6.TabIndex = 4;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // lblStep4
+            // 
+            this.lblStep4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStep4.Location = new System.Drawing.Point(103, 235);
+            this.lblStep4.Name = "lblStep4";
+            this.lblStep4.Size = new System.Drawing.Size(100, 34);
+            this.lblStep4.TabIndex = 17;
+            this.lblStep4.Text = "Entrega Exitosa";
+            // 
+            // pbStep4
+            // 
+            this.pbStep4.Image = ((System.Drawing.Image)(resources.GetObject("pbStep4.Image")));
+            this.pbStep4.Location = new System.Drawing.Point(43, 21);
+            this.pbStep4.Name = "pbStep4";
+            this.pbStep4.Size = new System.Drawing.Size(191, 171);
+            this.pbStep4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbStep4.TabIndex = 13;
+            this.pbStep4.TabStop = false;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(178, 69);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 5;
+            this.button12.Text = "button12";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click_2);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 914);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(2028, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Stencil", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.Indigo;
+            this.label28.Location = new System.Drawing.Point(728, 26);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(602, 56);
+            this.label28.TabIndex = 1;
+            this.label28.Text = "seguimiento de pedido";
+            this.label28.Click += new System.EventHandler(this.label28_Click_1);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radioButton5);
+            this.groupBox2.Controls.Add(this.pbStep1);
+            this.groupBox2.Controls.Add(this.lblStep1);
+            this.groupBox2.Location = new System.Drawing.Point(180, 275);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(331, 355);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton5.Location = new System.Drawing.Point(154, 295);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(17, 16);
+            this.radioButton5.TabIndex = 0;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // pbStep1
+            // 
+            this.pbStep1.Image = ((System.Drawing.Image)(resources.GetObject("pbStep1.Image")));
+            this.pbStep1.Location = new System.Drawing.Point(76, 21);
+            this.pbStep1.Name = "pbStep1";
+            this.pbStep1.Size = new System.Drawing.Size(191, 171);
+            this.pbStep1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbStep1.TabIndex = 10;
+            this.pbStep1.TabStop = false;
+            // 
+            // lblStep1
+            // 
+            this.lblStep1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStep1.Location = new System.Drawing.Point(113, 221);
+            this.lblStep1.Name = "lblStep1";
+            this.lblStep1.Size = new System.Drawing.Size(100, 27);
+            this.lblStep1.TabIndex = 14;
+            this.lblStep1.Text = "Solicitud Ingresada";
+            this.lblStep1.Click += new System.EventHandler(this.lblStep1_Click);
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.label33);
+            this.groupBox9.Controls.Add(this.pbStep2);
+            this.groupBox9.Controls.Add(this.radioButton8);
+            this.groupBox9.Location = new System.Drawing.Point(582, 296);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(331, 334);
+            this.groupBox9.TabIndex = 20;
+            this.groupBox9.TabStop = false;
+            // 
+            // label33
+            // 
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(102, 200);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(118, 60);
+            this.label33.TabIndex = 16;
+            this.label33.Text = "Preparando Producto";
+            // 
+            // pbStep2
+            // 
+            this.pbStep2.Image = ((System.Drawing.Image)(resources.GetObject("pbStep2.Image")));
+            this.pbStep2.Location = new System.Drawing.Point(60, 0);
+            this.pbStep2.Name = "pbStep2";
+            this.pbStep2.Size = new System.Drawing.Size(191, 171);
+            this.pbStep2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbStep2.TabIndex = 11;
+            this.pbStep2.TabStop = false;
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.Location = new System.Drawing.Point(154, 276);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(17, 16);
+            this.radioButton8.TabIndex = 6;
+            this.radioButton8.TabStop = true;
+            this.radioButton8.UseVisualStyleBackColor = true;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.lblStep3);
+            this.groupBox7.Controls.Add(this.pbStep3);
+            this.groupBox7.Controls.Add(this.radioButton7);
+            this.groupBox7.Location = new System.Drawing.Point(962, 296);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(331, 334);
+            this.groupBox7.TabIndex = 7;
+            this.groupBox7.TabStop = false;
+            // 
+            // lblStep3
+            // 
+            this.lblStep3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStep3.Location = new System.Drawing.Point(119, 207);
+            this.lblStep3.Name = "lblStep3";
+            this.lblStep3.Size = new System.Drawing.Size(100, 20);
+            this.lblStep3.TabIndex = 16;
+            this.lblStep3.Text = "En Ruta";
+            // 
+            // pbStep3
+            // 
+            this.pbStep3.Image = ((System.Drawing.Image)(resources.GetObject("pbStep3.Image")));
+            this.pbStep3.Location = new System.Drawing.Point(69, 0);
+            this.pbStep3.Name = "pbStep3";
+            this.pbStep3.Size = new System.Drawing.Size(191, 171);
+            this.pbStep3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbStep3.TabIndex = 12;
+            this.pbStep3.TabStop = false;
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.Location = new System.Drawing.Point(159, 276);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(17, 16);
+            this.radioButton7.TabIndex = 1;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.UseVisualStyleBackColor = true;
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // textBox23
+            // 
+            this.textBox23.Enabled = false;
+            this.textBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox23.Location = new System.Drawing.Point(788, 132);
+            this.textBox23.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(299, 34);
+            this.textBox23.TabIndex = 72;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(448, 132);
+            this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(333, 33);
+            this.label38.TabIndex = 71;
+            this.label38.Text = "Ingresa tu numero de pedido: ";
+            this.label38.UseCompatibleTextRendering = true;
+            // 
+            // button22
+            // 
+            this.button22.BackColor = System.Drawing.Color.SkyBlue;
+            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button22.Location = new System.Drawing.Point(1151, 114);
+            this.button22.Margin = new System.Windows.Forms.Padding(4);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(229, 64);
+            this.button22.TabIndex = 73;
+            this.button22.Text = "Consultar";
+            this.button22.UseVisualStyleBackColor = false;
+            this.button22.Click += new System.EventHandler(this.button22_Click_1);
             // 
             // Form1
             // 
@@ -2743,6 +3049,20 @@
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage10.ResumeLayout(false);
+            this.tabPage10.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStep4)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStep1)).EndInit();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStep2)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStep3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2938,6 +3258,32 @@
         private System.Windows.Forms.TextBox textBox22;
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.Label label28;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton radioButton8;
+        private System.Windows.Forms.RadioButton radioButton7;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label lblStep3;
+        private System.Windows.Forms.PictureBox pbStep1;
+        private System.Windows.Forms.PictureBox pbStep2;
+        private System.Windows.Forms.PictureBox pbStep3;
+        private System.Windows.Forms.PictureBox pbStep4;
+        private System.Windows.Forms.Label lblStep1;
+        private System.Windows.Forms.Label lblStep4;
+        private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Button button22;
     }
 }
 

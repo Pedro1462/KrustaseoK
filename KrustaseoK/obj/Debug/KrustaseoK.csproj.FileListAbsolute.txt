@@ -48,3 +48,10 @@ C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\obj\Debug\Krustas
 C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.csproj.Up2Date
 C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.exe
 C:\Users\chopper\Desktop\proyectroVISUAL\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.pdb
+C:\Users\isabe\OneDrive\Documentos\23DV\programacion_visual\KrustaseoK\KrustaseoK\bin\Debug\MySql.Data.dll
+C:\Users\isabe\OneDrive\Documentos\23DV\programacion_visual\KrustaseoK\KrustaseoK\bin\Debug\System.Memory.dll
+C:\Users\isabe\OneDrive\Documentos\23DV\programacion_visual\KrustaseoK\KrustaseoK\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\isabe\OneDrive\Documentos\23DV\programacion_visual\KrustaseoK\KrustaseoK\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\isabe\OneDrive\Documentos\23DV\programacion_visual\KrustaseoK\KrustaseoK\bin\Debug\System.Buffers.dll
+C:\Users\isabe\OneDrive\Documentos\23DV\programacion_visual\KrustaseoK\KrustaseoK\bin\Debug\MySql.Data.xml
+C:\Users\isabe\OneDrive\Documentos\23DV\programacion_visual\KrustaseoK\KrustaseoK\obj\Debug\KrustaseoK.Form2.resources

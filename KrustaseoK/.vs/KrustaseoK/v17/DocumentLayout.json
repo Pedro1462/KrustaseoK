@@ -1,18 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\pedro\\Documents\\Pedro\\Universidad\\Cuatrimestre 3\\Programacion Visual\\KrustaseoK\\KrustaseoK\\KrustaseoK\\",
+  "WorkspaceRootPath": "C:\\Users\\isabe\\OneDrive\\Documentos\\23DV\\programacion_visual\\KrustaseoK\\KrustaseoK\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|C:\\Users\\pedro\\Documents\\Pedro\\Universidad\\Cuatrimestre 3\\Programacion Visual\\KrustaseoK\\KrustaseoK\\KrustaseoK\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|c:\\users\\isabe\\onedrive\\documentos\\23dv\\programacion_visual\\krustaseok\\krustaseok\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|C:\\Users\\isabe\\OneDrive\\Documentos\\23DV\\programacion_visual\\KrustaseoK\\KrustaseoK\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|C:\\Users\\isabe\\OneDrive\\Documentos\\23DV\\programacion_visual\\KrustaseoK\\KrustaseoK\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|C:\\Users\\pedro\\Documents\\Pedro\\Universidad\\Cuatrimestre 3\\Programacion Visual\\KrustaseoK\\KrustaseoK\\KrustaseoK\\consulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|solutionrelative:consulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|C:\\Users\\isabe\\OneDrive\\Documentos\\23DV\\programacion_visual\\KrustaseoK\\KrustaseoK\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|c:\\users\\pedro\\documents\\pedro\\universidad\\cuatrimestre 3\\programacion visual\\krustaseok\\krustaseok\\krustaseok\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|C:\\Users\\isabe\\OneDrive\\Documentos\\23DV\\programacion_visual\\KrustaseoK\\KrustaseoK\\consulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{983830C3-CB6C-401E-982E-6E26C28D865F}|KrustaseoK.csproj|solutionrelative:consulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,18 +30,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Form1.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\pedro\\Documents\\Pedro\\Universidad\\Cuatrimestre 3\\Programacion Visual\\KrustaseoK\\KrustaseoK\\KrustaseoK\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\isabe\\OneDrive\\Documentos\\23DV\\programacion_visual\\KrustaseoK\\KrustaseoK\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\pedro\\Documents\\Pedro\\Universidad\\Cuatrimestre 3\\Programacion Visual\\KrustaseoK\\KrustaseoK\\KrustaseoK\\Form1.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\isabe\\OneDrive\\Documentos\\23DV\\programacion_visual\\KrustaseoK\\KrustaseoK\\Form1.cs [Dise\u00F1o]",
               "RelativeToolTip": "Form1.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-21T20:32:38.822Z",
+              "IsPinned": true,
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form2.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\isabe\\OneDrive\\Documentos\\23DV\\programacion_visual\\KrustaseoK\\KrustaseoK\\Form2.cs",
+              "RelativeDocumentMoniker": "Form2.cs",
+              "ToolTip": "C:\\Users\\isabe\\OneDrive\\Documentos\\23DV\\programacion_visual\\KrustaseoK\\KrustaseoK\\Form2.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Form2.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T03:49:16.276Z",
               "IsPinned": true,
               "EditorCaption": " [Dise\u00F1o]"
             },
@@ -43,11 +64,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "Form2.cs",
+              "DocumentMoniker": "C:\\Users\\isabe\\OneDrive\\Documentos\\23DV\\programacion_visual\\KrustaseoK\\KrustaseoK\\Form2.cs",
+              "RelativeDocumentMoniker": "Form2.cs",
+              "ToolTip": "C:\\Users\\isabe\\OneDrive\\Documentos\\23DV\\programacion_visual\\KrustaseoK\\KrustaseoK\\Form2.cs",
+              "RelativeToolTip": "Form2.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAADgvx0AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T04:22:06.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "consulta.cs",
-              "DocumentMoniker": "C:\\Users\\pedro\\Documents\\Pedro\\Universidad\\Cuatrimestre 3\\Programacion Visual\\KrustaseoK\\KrustaseoK\\KrustaseoK\\consulta.cs",
+              "DocumentMoniker": "C:\\Users\\isabe\\OneDrive\\Documentos\\23DV\\programacion_visual\\KrustaseoK\\KrustaseoK\\consulta.cs",
               "RelativeDocumentMoniker": "consulta.cs",
-              "ToolTip": "C:\\Users\\pedro\\Documents\\Pedro\\Universidad\\Cuatrimestre 3\\Programacion Visual\\KrustaseoK\\KrustaseoK\\KrustaseoK\\consulta.cs",
+              "ToolTip": "C:\\Users\\isabe\\OneDrive\\Documentos\\23DV\\programacion_visual\\KrustaseoK\\KrustaseoK\\consulta.cs",
               "RelativeToolTip": "consulta.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAACcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -56,13 +90,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\pedro\\Documents\\Pedro\\Universidad\\Cuatrimestre 3\\Programacion Visual\\KrustaseoK\\KrustaseoK\\KrustaseoK\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\isabe\\OneDrive\\Documentos\\23DV\\programacion_visual\\KrustaseoK\\KrustaseoK\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\pedro\\Documents\\Pedro\\Universidad\\Cuatrimestre 3\\Programacion Visual\\KrustaseoK\\KrustaseoK\\KrustaseoK\\Form1.cs",
+              "ToolTip": "C:\\Users\\isabe\\OneDrive\\Documentos\\23DV\\programacion_visual\\KrustaseoK\\KrustaseoK\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAAP0AAAAAAAAAAAAgwC0BAAAEAAAA",
+              "ViewState": "AQIAAOUCAAAAAAAAAAAEwO8CAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-22T14:24:06.947Z",
               "EditorCaption": ""
